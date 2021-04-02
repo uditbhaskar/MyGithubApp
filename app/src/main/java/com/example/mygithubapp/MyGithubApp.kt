@@ -11,6 +11,7 @@ class MyGithubApp :Application(){
 
     override fun onCreate() {
         super.onCreate()
+        injectDependencies()
     }
 
     private fun injectDependencies() {

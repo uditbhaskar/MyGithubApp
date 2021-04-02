@@ -2,6 +2,6 @@ package com.example.mygithubapp.data.remote
 
 object Endpoints {
 
-    const val DUMMY = "dummy/list"
+    const val SEARCH_USER = "search/users"
 
 }

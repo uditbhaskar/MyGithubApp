@@ -63,7 +63,6 @@ class ApplicationModule(private val applicationMy: MyGithubApp) {
     @Singleton
     fun provideNetworkService(): NetworkService =
             Networking.create(
-                    BuildConfig.API_KEY,
                     BuildConfig.BASE_URL,
                     applicationMy.cacheDir,
                     10 * 1024 * 1024 // 10MB

@@ -10,7 +10,6 @@ import com.example.mygithubapp.di.component.ActivityComponent
 import com.example.mygithubapp.di.component.DaggerActivityComponent
 import com.example.mygithubapp.di.module.ActivityModule
 import com.example.mygithubapp.utils.display.Toaster
-
 import javax.inject.Inject
 
 /**
