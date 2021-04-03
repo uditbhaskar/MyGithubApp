@@ -51,6 +51,7 @@
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:colorButtonNormal">@color/black</item>
     </style>
 
     <style name="AppTheme.Headline1" parent="TextAppearance.MaterialComponents.Headline1">

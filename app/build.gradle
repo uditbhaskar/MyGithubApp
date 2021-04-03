@@ -20,14 +20,12 @@ android {
 
     buildTypes {
         debug{
-            buildConfigField("String", "BASE_URL", "\"https://api.projects.bootcamp.mindorks.com/batch/green/\"")
-            buildConfigField("String", "API_KEY", "\"HBNA19QVVAPP\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "BASE_URL", "\"https://api.projects.bootcamp.mindorks.com/batch/green/\"")
-            buildConfigField("String", "API_KEY", "\"HBNA19QVVAPP\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
         }
     }
     compileOptions {
@@ -120,4 +118,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso_version"
     androidTestImplementation "org.mockito:mockito-core:$mockito_version"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //Animation
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

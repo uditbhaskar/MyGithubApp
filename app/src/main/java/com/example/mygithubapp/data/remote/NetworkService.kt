@@ -11,7 +11,7 @@ interface NetworkService {
 
     @GET(Endpoints.SEARCH_USER)
     fun doSearchUserCall(
-        @Query("emailId") emailId: String
+        @Query("q") emailId: String
     ): Single<SearchUserResponse>
 
 }

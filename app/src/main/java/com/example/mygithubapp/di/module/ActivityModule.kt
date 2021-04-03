@@ -3,7 +3,9 @@ package com.example.mygithubapp.di.module
 
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mygithubapp.data.repository.SearchUserRepository
 import com.example.mygithubapp.ui.base.BaseActivity
+import com.example.mygithubapp.ui.login.LoginViewModel
 import com.example.mygithubapp.ui.splash.SplashViewModel
 import com.example.mygithubapp.utils.ViewModelProviderFactory
 import com.example.mygithubapp.utils.network.NetworkHelper
@@ -34,5 +36,16 @@ class ActivityModule(private val activity: BaseActivity<*>) {
         activity, ViewModelProviderFactory(SplashViewModel::class){
            SplashViewModel(schedulerProvider, compositeDisposable, networkHelper)
         }).get(SplashViewModel::class.java)
+
+    @Provides
+    fun providesLoginViewModel(
+        schedulerProvider: SchedulerProvider,
+        compositeDisposable: CompositeDisposable,
+        networkHelper: NetworkHelper,
+        searchUserRepository: SearchUserRepository
+    ): LoginViewModel = ViewModelProviders.of(
+        activity, ViewModelProviderFactory(LoginViewModel::class){
+            LoginViewModel(schedulerProvider, compositeDisposable, networkHelper, searchUserRepository)
+        }).get(LoginViewModel::class.java)
 }
 

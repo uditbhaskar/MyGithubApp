@@ -9,4 +9,10 @@
     <string name="server_connection_error">Not able to connect, please retry again</string>
     <string name="network_login_again">Please log in again</string>
     <string name="todo">TODO</string>
+
+    <!--login-->
+    <string name="email_field_hint">Enter your email</string>
+    <string name="email_field_empty">Email can\'t be empty</string>
+    <string name="email_field_invalid">Not a valid email</string>
+    <string name="search_button_text">Search</string>
 </resources>
