@@ -1,10 +1,10 @@
-package com.example.mygithubapp.data.local.dao
+package com.example.mygithubapp.data.local.db.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.mygithubapp.data.local.entity.DummyEntity
+import com.example.mygithubapp.data.local.db.entity.DummyEntity
 
 
 @Dao

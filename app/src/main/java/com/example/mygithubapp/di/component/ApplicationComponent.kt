@@ -4,8 +4,9 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.mygithubapp.MyGithubApp
-import com.example.mygithubapp.data.local.DatabaseService
+import com.example.mygithubapp.data.local.db.DatabaseService
 import com.example.mygithubapp.data.remote.NetworkService
+import com.example.mygithubapp.data.repository.SearchUserRepository
 
 import com.example.mygithubapp.di.ApplicationContext
 import com.example.mygithubapp.di.module.ApplicationModule
@@ -57,6 +58,8 @@ interface ApplicationComponent {
      */
 
     fun getSchedulerProvider(): SchedulerProvider
+
+    fun SearchUserRepository() : SearchUserRepository
 
 
     fun getCompositeDisposable(): CompositeDisposable

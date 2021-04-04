@@ -1,4 +1,4 @@
-package com.example.mygithubapp.data.local.entity
+package com.example.mygithubapp.data.local.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

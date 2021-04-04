@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 import androidx.room.Room
 import com.example.mygithubapp.BuildConfig
 import com.example.mygithubapp.MyGithubApp
-import com.example.mygithubapp.data.local.DatabaseService
+import com.example.mygithubapp.data.local.db.DatabaseService
 import com.example.mygithubapp.data.remote.NetworkService
 import com.example.mygithubapp.data.remote.Networking
 import com.example.mygithubapp.di.ApplicationContext

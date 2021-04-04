@@ -1,9 +1,9 @@
-package com.example.mygithubapp.data.local
+package com.example.mygithubapp.data.local.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.mygithubapp.data.local.dao.DummyDao
-import com.example.mygithubapp.data.local.entity.DummyEntity
+import com.example.mygithubapp.data.local.db.dao.DummyDao
+import com.example.mygithubapp.data.local.db.entity.DummyEntity
 import javax.inject.Singleton
 
 @Singleton
