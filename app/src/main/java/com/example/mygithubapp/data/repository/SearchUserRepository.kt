@@ -4,6 +4,7 @@ import com.example.mygithubapp.data.local.db.DatabaseService
 import com.example.mygithubapp.data.local.prefs.UserSearchPreferences
 import com.example.mygithubapp.data.model.UserData
 import com.example.mygithubapp.data.remote.NetworkService
+import com.example.mygithubapp.data.remote.response.HomeRepoListResponse
 import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -44,6 +45,9 @@ class SearchUserRepository @Inject constructor(
     }
 
     fun fetchSearchUser(emailId: String): Single<List<UserData>> =
-        networkService.doSearchUserCall(emailId).map { it.items }
+        networkService.doSearchUserCall(emailId).map {
+            it.items }
+
 
 }
+

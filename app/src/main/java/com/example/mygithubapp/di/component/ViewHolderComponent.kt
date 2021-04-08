@@ -2,6 +2,7 @@ package com.example.mygithubapp.di.component
 
 import com.example.mygithubapp.di.ViewModelScope
 import com.example.mygithubapp.di.module.ViewHolderModule
+import com.example.mygithubapp.ui.home.repos.RepoItemViewHolder
 
 import dagger.Component
 
@@ -12,5 +13,5 @@ import dagger.Component
 )
 interface ViewHolderComponent {
 
-
+    fun inject(itemViewHolder: RepoItemViewHolder)
 }

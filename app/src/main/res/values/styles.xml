@@ -41,6 +41,8 @@
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
     </style>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -52,6 +54,8 @@
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:colorButtonNormal">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
     </style>
 
     <style name="AppTheme.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
@@ -121,11 +125,5 @@
 
     <style name="AppTheme.Tab" parent="TextAppearance.MaterialComponents.Tab"/>
     <style name="AppTheme.Chip" parent="TextAppearance.MaterialComponents.Chip"/>
-
-    <style name="AppTheme.Toolbar" parent="Base.Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:minHeight">?attr/actionBarSize</item>
-    </style>
 
 </resources>

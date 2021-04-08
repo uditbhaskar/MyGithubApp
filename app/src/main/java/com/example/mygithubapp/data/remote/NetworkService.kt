@@ -18,8 +18,6 @@ interface NetworkService {
     @GET(Endpoints.FETCH_REPOS)
     fun doHomeRepoListCall(
         @Path(value = "USER_NAME", encoded = true) loginName :String
-    ): Single<HomeRepoListResponse>
-
-
+    ): Single<List<HomeRepoListResponse>>
 
 }

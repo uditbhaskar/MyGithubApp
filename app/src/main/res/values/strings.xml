@@ -14,5 +14,12 @@
     <string name="email_field_hint">Enter your email</string>
     <string name="email_field_empty">Email can\'t be empty</string>
     <string name="email_field_invalid">Not a valid email</string>
-    <string name="search_button_text">Search</string>
+
+    <!--toolbar-->
+    <string name="search_button_text">LOGIN</string>
+    <string name="search">Search..</string>
+    <string name="username">UserName</string>
+    <string name="log_out">Log out</string>
+    <string name="logged_out">Logged out</string>
+
 </resources>

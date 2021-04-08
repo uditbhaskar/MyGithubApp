@@ -121,4 +121,9 @@ dependencies {
 
     //Animation
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //Circular image view
+    implementation "de.hdodenhof:circleimageview:$circular_image_view"
+
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.4.Final'
 }

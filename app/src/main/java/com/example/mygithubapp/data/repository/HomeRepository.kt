@@ -9,4 +9,7 @@ class HomeRepository @Inject constructor(
     private val databaseService: DatabaseService
 ) {
 
+    fun fetchHomeReposList(loginName: String) =
+        networkService.doHomeRepoListCall(loginName)
+
 }

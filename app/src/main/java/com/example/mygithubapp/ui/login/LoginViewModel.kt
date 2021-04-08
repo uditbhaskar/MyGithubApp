@@ -2,8 +2,10 @@ package com.example.mygithubapp.ui.login
 
 import androidx.lifecycle.MutableLiveData
 import com.example.mygithubapp.R
+import com.example.mygithubapp.data.repository.HomeRepository
 import com.example.mygithubapp.data.repository.SearchUserRepository
 import com.example.mygithubapp.ui.base.BaseViewModel
+import com.example.mygithubapp.utils.common.Event
 import com.example.mygithubapp.utils.common.Resource
 import com.example.mygithubapp.utils.common.Validator
 import com.example.mygithubapp.utils.network.NetworkHelper
@@ -20,6 +22,8 @@ class LoginViewModel(
 
     val emailField: MutableLiveData<String> = MutableLiveData()
     val searching: MutableLiveData<Boolean> = MutableLiveData()
+
+    val launchHome:  MutableLiveData<Event<Map<String, String>>> = MutableLiveData()
 
 
     override fun onCreate() {
@@ -48,7 +52,11 @@ class LoginViewModel(
                                 if (it.isEmpty()) {
                                     messageString.postValue(Resource.error("Check your Email id."))
                                 }else{
+                                    searchUserRepository.removeCurrentSearchUserData()
                                     searchUserRepository.saveCurrentSearchUSerData(it[0])
+                                    if (searchUserRepository.getCurrentSearchUSerData()!=null){
+                                        launchHome.postValue(Event(emptyMap()))
+                                    }
                                 }
                                 searching.postValue(false)
                             },

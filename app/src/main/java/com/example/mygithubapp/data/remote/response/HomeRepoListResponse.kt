@@ -10,7 +10,11 @@ data class HomeRepoListResponse (
 
     @Expose
     @SerializedName("description")
-    var description: String,
+    var description: String?,
+
+    @Expose
+    @SerializedName("created_at")
+    var created_at:String,
 
     @Expose
     @SerializedName("stargazers_count")
@@ -18,10 +22,8 @@ data class HomeRepoListResponse (
 
     @Expose
     @SerializedName("language")
-    var language:String,
+    var language:String?
 
-    @Expose
-    @SerializedName("updated_at")
-    var updated_at:String
+
 
 )

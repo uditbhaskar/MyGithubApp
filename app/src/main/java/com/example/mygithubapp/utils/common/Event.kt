@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
+
 data class Event<out T> (private val content: T) {
 
     private var hasBeenHandled = AtomicBoolean(false)

@@ -1,5 +1,6 @@
 package com.example.mygithubapp.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.example.mygithubapp.R
 import com.example.mygithubapp.di.component.ActivityComponent
 import com.example.mygithubapp.ui.base.BaseActivity
+import com.example.mygithubapp.ui.home.HomeActivity
 import com.example.mygithubapp.utils.common.DismissKeyboard
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -43,6 +45,8 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
         }
     }
 
+
+
     override fun setupObservers() {
         super.setupObservers()
 
@@ -52,6 +56,13 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
 
         viewModel.searching.observe(this, Observer {
             pb_loading.visibility = if (it) View.VISIBLE else View.GONE
+        })
+
+        viewModel.launchHome.observe(this, Observer {
+            it.getIfNotHandled()?.run {
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
+                finish()
+            }
         })
     }
 }

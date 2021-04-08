@@ -75,4 +75,7 @@ ext {
 
     //Animation
     lottieVersion = "3.7.0"
+
+    //Circular ImageView
+    circular_image_view = "3.1.0"
 }
