@@ -1,8 +1,8 @@
 # MyGithubApp
 
 
-This app lets a user login using a github email id and then fetch all their public repositories. The login session is valid till a user logs out.
-This project is based on MVVM architecture and a beautiful user interface.
+This app lets a user login using their github email id and then fetch all their public repositories. The login session is valid till a user logs out.
+This project is based on MVVM architecture and has a beautiful UI.
 
 ## Dagger, Architectural Components,  RxJava, Lifecycle-Aware componentes, LiveData, ViewModel, Retrofit and Material Design.
 .
