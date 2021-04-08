@@ -5,9 +5,10 @@ This app lets a user login using a github email id and then fetch all their publ
 This project is based on MVVM architecture and a beautiful user interface.
 
 ## Dagger, Architectural Components,  RxJava, Lifecycle-Aware componentes, LiveData, ViewModel, Retrofit and Material Design.
+.
 
 
-App interface:-
+# App interface:-
 
 ## Login & Splash screen.
 
