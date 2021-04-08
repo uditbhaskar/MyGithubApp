@@ -11,13 +11,13 @@ import com.example.mygithubapp.ui.home.HomeViewModel
 import com.example.mygithubapp.ui.home.repos.RepoAdapter
 import com.example.mygithubapp.ui.login.LoginViewModel
 import com.example.mygithubapp.ui.splash.SplashViewModel
+import com.example.mygithubapp.ui.webView.WebViewModel
 import com.example.mygithubapp.utils.ViewModelProviderFactory
 import com.example.mygithubapp.utils.network.NetworkHelper
 import com.example.mygithubapp.utils.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.processors.PublishProcessor
 
 
 /**
@@ -33,7 +33,7 @@ class ActivityModule(private val activity: BaseActivity<*>) {
     fun provideLinearLayoutManager(): LinearLayoutManager = LinearLayoutManager(activity)
 
     @Provides
-    fun provideRepoAdapter() = RepoAdapter(activity.lifecycle,ArrayList())
+    fun provideRepoAdapter() = RepoAdapter(activity.lifecycle, ArrayList())
 
     @Provides
     fun providesSplashViewModel(
@@ -86,5 +86,23 @@ class ActivityModule(private val activity: BaseActivity<*>) {
                 ArrayList<HomeRepoListResponse>()
             )
         }).get(HomeViewModel::class.java)
+
+
+    @Provides
+    fun providesWebViewModel(
+        schedulerProvider: SchedulerProvider,
+        compositeDisposable: CompositeDisposable,
+        networkHelper: NetworkHelper,
+        searchUserRepository: SearchUserRepository
+    ): WebViewModel = ViewModelProviders.of(
+        activity, ViewModelProviderFactory(WebViewModel::class) {
+            WebViewModel(
+                schedulerProvider,
+                compositeDisposable,
+                networkHelper,
+                searchUserRepository
+            )
+        }).get(WebViewModel::class.java
+    )
 }
 

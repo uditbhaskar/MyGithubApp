@@ -21,5 +21,6 @@
     <string name="username">UserName</string>
     <string name="log_out">Log out</string>
     <string name="logged_out">Logged out</string>
+    <string name="details">Details</string>
 
 </resources>

@@ -22,8 +22,10 @@ data class HomeRepoListResponse (
 
     @Expose
     @SerializedName("language")
-    var language:String?
+    var language:String?,
 
-
+    @Expose
+    @SerializedName("html_url")
+    var html_url:String?
 
 )

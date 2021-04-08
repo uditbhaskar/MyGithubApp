@@ -24,6 +24,7 @@ class RepoItemViewModel @Inject constructor(
     val description :LiveData<String> = Transformations.map(data){it.description}
     val countStars:LiveData<Int> = Transformations.map(data){it.stargazers_count}
     val language:LiveData<String> = Transformations.map(data){it.language}
+    val url:LiveData<String> = Transformations.map(data){it.html_url}
 
     companion object {
         const val TAG = "RepoItemViewModel"
