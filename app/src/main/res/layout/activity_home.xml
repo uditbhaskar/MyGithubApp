@@ -51,7 +51,8 @@
         android:textColor="@color/black"
         android:textColorHint="#545557"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
 
