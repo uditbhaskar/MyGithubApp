@@ -30,7 +30,6 @@ class SplashActivity : BaseActivity<SplashViewModel>(){
         viewModel.launchLogin.observe(this, Observer {
             it.getIfNotHandled()?.run {
               startActivity(Intent(applicationContext, LoginActivity::class.java))
-
             }
         })
 

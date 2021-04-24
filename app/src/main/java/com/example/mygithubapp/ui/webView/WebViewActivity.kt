@@ -1,7 +1,6 @@
 package com.example.mygithubapp.ui.webView
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
@@ -10,7 +9,6 @@ import androidx.lifecycle.Observer
 import com.example.mygithubapp.R
 import com.example.mygithubapp.di.component.ActivityComponent
 import com.example.mygithubapp.ui.base.BaseActivity
-import com.example.mygithubapp.ui.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_webview.*
 
 
@@ -40,7 +38,7 @@ class WebViewActivity : BaseActivity<WebViewModel>() {
 
                 override fun onPageCommitVisible(view: WebView?, url: String?) {
                     super.onPageCommitVisible(view, url)
-                    progressBar.visibility= View.GONE
+                    progressBar.visibility = View.GONE
                 }
             }
 
@@ -60,7 +58,6 @@ class WebViewActivity : BaseActivity<WebViewModel>() {
 
         viewModel.launchHome.observe(this, Observer {
             it.getIfNotHandled()?.run {
-                startActivity(Intent(applicationContext, HomeActivity::class.java))
                 finish()
             }
         })

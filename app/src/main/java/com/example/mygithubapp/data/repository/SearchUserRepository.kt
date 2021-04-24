@@ -1,6 +1,8 @@
 package com.example.mygithubapp.data.repository
 
 import com.example.mygithubapp.data.local.db.DatabaseService
+import com.example.mygithubapp.data.local.db.dao.DummyDao
+import com.example.mygithubapp.data.local.db.entity.DummyEntity
 import com.example.mygithubapp.data.local.prefs.UserSearchPreferences
 import com.example.mygithubapp.data.model.UserData
 import com.example.mygithubapp.data.remote.NetworkService

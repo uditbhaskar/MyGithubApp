@@ -64,8 +64,8 @@ class HomeActivity : BaseActivity<HomeViewModel>() {
 
         viewModel.launchLogin.observe(this, Observer {
             it.getIfNotHandled()?.run {
-                startActivity(Intent(applicationContext, LoginActivity::class.java))
                 finish()
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
             }
         })
 

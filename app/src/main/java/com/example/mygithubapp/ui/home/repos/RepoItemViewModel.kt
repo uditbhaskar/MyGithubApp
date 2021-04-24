@@ -1,11 +1,13 @@
 package com.example.mygithubapp.ui.home.repos
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.example.mygithubapp.data.remote.response.HomeRepoListResponse
 import com.example.mygithubapp.data.repository.HomeRepository
 import com.example.mygithubapp.data.repository.SearchUserRepository
 import com.example.mygithubapp.ui.base.BaseItemViewModel
+import com.example.mygithubapp.utils.common.Event
 import com.example.mygithubapp.utils.network.NetworkHelper
 import com.example.mygithubapp.utils.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
@@ -19,12 +21,13 @@ class RepoItemViewModel @Inject constructor(
     private val homeRepository: HomeRepository
 ) : BaseItemViewModel<HomeRepoListResponse>(schedulerProvider, compositeDisposable, networkHelper) {
 
-    val repoName:LiveData<String> = Transformations.map(data){ it.name}
-    val lastCreatedTime:LiveData<String> = Transformations.map(data){ formatDate(it.created_at)}
-    val description :LiveData<String> = Transformations.map(data){it.description}
-    val countStars:LiveData<Int> = Transformations.map(data){it.stargazers_count}
-    val language:LiveData<String> = Transformations.map(data){it.language}
-    val url:LiveData<String> = Transformations.map(data){it.html_url}
+    val repoName: LiveData<String> = Transformations.map(data) { it.name }
+    val lastCreatedTime: LiveData<String> = Transformations.map(data) { formatDate(it.created_at) }
+    val description: LiveData<String> = Transformations.map(data) { it.description }
+    val countStars: LiveData<Int> = Transformations.map(data) { it.stargazers_count }
+    val language: LiveData<String> = Transformations.map(data) { it.language }
+    val url: LiveData<String> = Transformations.map(data) { it.html_url }
+    val onLaunchWebViewActivity: MutableLiveData<Event<Map<String, String>>> = MutableLiveData()
 
     companion object {
         const val TAG = "RepoItemViewModel"
@@ -34,13 +37,16 @@ class RepoItemViewModel @Inject constructor(
 
     }
 
+    fun onLaunchWebView(){
+        onLaunchWebViewActivity.postValue(Event(emptyMap()))
+    }
+
 
     private fun formatDate(stringDate: String): String {
 
-            return stringDate.substring(0,10)
+        return stringDate.substring(0, 10)
 
     }
-
 
 
 }

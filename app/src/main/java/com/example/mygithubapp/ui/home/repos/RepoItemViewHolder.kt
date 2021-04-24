@@ -22,14 +22,25 @@ class RepoItemViewHolder(parent: ViewGroup) :
 
     override fun setupView(view: View) {
         itemView.setOnClickListener {
-            val intent = Intent(itemView.context, WebViewActivity::class.java)
-            intent.putExtra("url", urlForWebView)
-            itemView.context.startActivity(intent)
+            viewModel.onLaunchWebView()
         }
     }
 
     override fun setupObservers() {
         super.setupObservers()
+
+
+        viewModel.onLaunchWebViewActivity.observe(this, Observer {
+
+            it.getIfNotHandled()?.run {
+                val intent = Intent(itemView.context, WebViewActivity::class.java)
+                intent.putExtra("url", urlForWebView)
+                itemView.context.startActivity(intent)
+            }
+
+
+        })
+
 
         viewModel.url.observe(this, Observer {
             urlForWebView = it.toString()
