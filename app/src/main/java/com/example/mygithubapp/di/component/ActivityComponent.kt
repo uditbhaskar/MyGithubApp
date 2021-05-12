@@ -1,7 +1,6 @@
 package com.example.mygithubapp.di.component
 
 
-
 import com.example.mygithubapp.di.ActivityScope
 import com.example.mygithubapp.di.module.ActivityModule
 import com.example.mygithubapp.ui.home.HomeActivity
@@ -18,7 +17,8 @@ import dagger.Component
 )
 interface ActivityComponent {
 
-    fun inject(activity: SplashActivity)
+    fun inject(activity: SplashActivity) // we have to scan the class of type Splash Activity and provide dependencies to all
+                                        // the places with @inject in the class (be it constructor,method,or field) and also its base class ie., the class it implements
 
     fun inject(activity: LoginActivity)
 

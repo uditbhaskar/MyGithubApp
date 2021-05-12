@@ -33,9 +33,12 @@ class RepoItemViewHolder(parent: ViewGroup) :
         viewModel.onLaunchWebViewActivity.observe(this, Observer {
 
             it.getIfNotHandled()?.run {
-                val intent = Intent(itemView.context, WebViewActivity::class.java)
-                intent.putExtra("url", urlForWebView)
-                itemView.context.startActivity(intent)
+                itemView.context.startActivity(
+                    Intent(
+                        itemView.context,
+                        WebViewActivity::class.java
+                    ).putExtra("url", urlForWebView)
+                )
             }
 
 

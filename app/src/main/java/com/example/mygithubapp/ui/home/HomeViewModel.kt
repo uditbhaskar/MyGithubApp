@@ -11,8 +11,7 @@ import com.example.mygithubapp.utils.common.Resource
 import com.example.mygithubapp.utils.network.NetworkHelper
 import com.example.mygithubapp.utils.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.processors.PublishProcessor
-import io.reactivex.schedulers.Schedulers
+
 
 class HomeViewModel(
     schedulerProvider: SchedulerProvider,
