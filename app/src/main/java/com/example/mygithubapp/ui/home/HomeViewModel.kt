@@ -61,9 +61,6 @@ class HomeViewModel(
         }
     }
 
-    fun loadDataList(){
-        fetchRepoList(userLoginName)
-    }
 
 
 

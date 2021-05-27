@@ -29,9 +29,7 @@ class RepoItemViewHolder(parent: ViewGroup) :
     override fun setupObservers() {
         super.setupObservers()
 
-
         viewModel.onLaunchWebViewActivity.observe(this, Observer {
-
             it.getIfNotHandled()?.run {
                 itemView.context.startActivity(
                     Intent(
