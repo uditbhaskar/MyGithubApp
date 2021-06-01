@@ -7,7 +7,6 @@ This app lets a user log in using his/her GitHub email id and then lists all the
 
 
 ## **Dagger, Architectural Components,  RxJava, Lifecycle-Aware componentes, LiveData, ViewModel, Retrofit & Material Design.**
-.
 
 
 ## App interface:-
